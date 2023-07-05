@@ -10,7 +10,10 @@ echo "nameserver 10.0.0.3" > /etc/resolv.conf # dns server provided by qemu
 echo "mounting httpdirfs..."
 modprobe fuse
 httpMount=$(mktemp -d)
-httpdirfs --single-file-mode "$isoUrl" "$httpMount"
+cacheDir=$(mktemp -d)
+httpdirfs --cache --cache-location "$cacheDir" --single-file-mode "$isoUrl" "$httpMount"
+
+mount -o remount,size=400M /tmp # otherwise httpdirfs returns incorrect data after running out of space: https://github.com/fangfufu/httpdirfs/issues/119
 
 isoFile=$(ls "$httpMount")
 

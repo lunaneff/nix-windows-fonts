@@ -34,6 +34,7 @@ stdenv.mkDerivation {
   inherit outputHash;
 
   QEMU_OPTS = "-netdev user,id=net0,net=10.0.0.0/24,dhcpstart=10.0.0.10 -device virtio-net-pci,netdev=net0";
+  memSize = 800;
 
   meta = with lib; {
     description = "Fonts bundled in Windows ${windowsVersion}";
