@@ -39,6 +39,12 @@
     };
   in {
     packages = genSystems (system: let pkgs = nixpkgsFor system; in packages pkgs);
+
+    overlays = rec {
+      windows-fonts = self: super: packages super;
+      default = windows-fonts;
+    };
+
     formatter = genSystems (system: let pkgs = nixpkgsFor system; in pkgs.alejandra);
   };
 }
