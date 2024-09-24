@@ -29,9 +29,9 @@
         outputHash = "sha256-tn4FKgKLtQRkIkNLV5/A0AsdUyeUEcnsIf5cJ7vsDHg=";
       };
       buildWin11Fonts = buildFonts {
-        isoUrl = "https://software-static.download.prss.microsoft.com/dbazure/988969d5-f34g-4e03-ac9d-1f9786c66751/22621.525.220925-0207.ni_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso";
-        windowsVersion = "11-22H2";
-        outputHash = "sha256-uapC6FT5qTHiOWrXGfNCLfuwGjOiKkUaeSsCd7b2rjc=";
+        isoUrl = "https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/22631.2428.231001-0608.23H2_NI_RELEASE_SVC_REFRESH_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso";
+        windowsVersion = "11-23H2";
+        outputHash = "sha256-Z2KHJ9Dbi/nD6zfIaZC6ttc8hyosk4zm9jASBMdXuY4=";
       };
     in {
       win10Fonts = pkgs.vmTools.runInLinuxVM buildWin10Fonts;
